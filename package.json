@@ -1,0 +1,23 @@
+{
+  "name": "lm-cli",
+  "version": "1.0.0",
+  "description": "一款用来通过命令行配置脚手架的工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzqGiser/LM-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "webpack"
+  ],
+  "author": "lzq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lzqGiser/LM-cli/issues"
+  },
+  "homepage": "https://github.com/lzqGiser/LM-cli#readme"
+}
