@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "一款用来通过命令行配置脚手架的工具",
   "main": "index.js",
+  "bin": {
+    "lm-init": "bin/lm-init.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node bin/lm-init.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/lzqGiser/LM-cli/issues"
   },
-  "homepage": "https://github.com/lzqGiser/LM-cli#readme"
+  "homepage": "https://github.com/lzqGiser/LM-cli#readme",
+  "dependencies": {
+    "download-git-repo": "^1.0.1",
+    "glob": "^7.1.2",
+    "inquirer": "^3.3.0",
+    "user-home": "^2.0.0"
+  }
 }

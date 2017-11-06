@@ -1,0 +1,1 @@
+/** * Created by lzq on 2017/11/6. */const userHom = require('user-home');const path = require('path');const downloadGit = require('download-git-repo');const templatePath = path.join(userHom,'.lmTemplate')console.log(templatePath);
