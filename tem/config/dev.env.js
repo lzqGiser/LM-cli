@@ -1,0 +1,1 @@
+/** * Created by lzq on 2017/8/24. */// const merge = require('webpack-merge')// const prodEnv = require('./prod.env')//// module.exports = merge(prodEnv, {//     NODE_ENV: '"development"'// });module.exports = {    NODE_ENV:'"development"'  // 开发环境};

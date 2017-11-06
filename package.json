@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/lzqGiser/LM-cli#readme",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "download-git-repo": "^1.0.1",
     "glob": "^7.1.2",
     "inquirer": "^3.3.0",

@@ -1,0 +1,7 @@
+/**
+ * Created by lzq on 2017/11/6.
+ */
+
+{
+    "presets": ["es2015"]
+}

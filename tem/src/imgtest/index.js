@@ -1,0 +1,1 @@
+/** * Created by lzq on 2017/9/21. */import img_icon from './con_icon.vue'img_icon.install = function (Vue) {    Vue.component(img_icon.name, img_icon)};export {    img_icon,}
