@@ -1,13 +1,16 @@
 {
-  "name": "lm-cli",
-  "version": "1.0.0",
+  "name": "@dp/lm-cli-b11",
+  "version": "1.0.8",
   "description": "一款用来通过命令行配置脚手架的工具",
   "main": "index.js",
   "bin": {
     "lm-init": "bin/lm-init.js"
   },
   "scripts": {
-    "test": "node bin/index.js"
+    "test": "node babeltrs/bin/index.js",
+    "test3": "node babelCode/bin/index.js",
+    "test4": "node bin/lm-init.js",
+    "test2": "node test/minimatch"
   },
   "repository": {
     "type": "git",
@@ -25,7 +28,6 @@
   "homepage": "https://github.com/lzqGiser/LM-cli#readme",
   "dependencies": {
     "babel-core": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -40,6 +42,7 @@
     "user-home": "^2.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "minimatch": "^3.0.4"
   }
 }

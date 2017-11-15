@@ -1,0 +1,1 @@
+/** * Created by lzq on 2017/11/6. */import path from 'path';let devConfig = {    'repository': '自己定义仓库地址',    'dirPath': path.join(__dirname,'testPath')};export default devConfig;

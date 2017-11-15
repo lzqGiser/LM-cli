@@ -1,1 +1,53 @@
-/** * Created by lzq on 2017/11/6. */import interAsk from '../lib/ask';import path from "path";import downGit from '../lib/downloadGit'import devConfig from '../config/repository'import userHome from 'user-home'import gh from '../lib/handler'const templatePath = path.join(userHome,'Documents/lmTemplate');const lstemp = path.join(__dirname,'../tmp/template')   // 临时work目录，最终要替换成上面的内容let meta;// console.log(lstemp);// 稍后 templatePath 应该替换掉 tmpasync function generate(){    // let msg = await downGit('github:lzqGiser/vue-npm-con',lstemp);    // console.log(msg);    let msg = true;    msg ? meta = require(lstemp+'/meta') : meta = null;    //console.log(meta.questions);    let answer = await interAsk(meta.questions);    console.log(answer)    let ghMsg = await gh(answer)    console.log(ghMsg)}generate();
+#!/usr/bin/env node
+
+console.log('hello node');
+
+const interAsk = require('../lib/ask');
+const path = require('path');
+const downGit = require('../lib/downloadGit');
+const userHome = require('user-home');
+const gh = require('../lib/handler');
+const localPath = require('../lib/local-path');
+
+const templatePath = path.join(userHome,'Documents/lmTemplate');
+
+const lstemp = path.join(__dirname,'../tmp/template')   // 临时work目录，最终要替换成上面的内容
+const lstempp = path.join(__dirname,'../tmp/build')   // 临时work目录，最终要替换成上面的内容
+
+const lstempout = path.join(userHome,'Documents/build')   // 临时work目录，最终要替换成上面的内容
+
+let meta;
+
+generate(templatePath,lstempout);
+
+function generate(workDir, outputDir){
+
+    downGit('github:lzqGiser/vue-npm-con',workDir).then(function(msg){
+
+        console.log(msg)
+
+        let metaPath = path.join(workDir,'./meta.js');
+
+        meta = require(path.resolve(metaPath));
+        console.log(meta)
+        console.log('-------------')
+
+        let questions = meta.questions;
+        let filter = meta.filter;
+
+        interAsk(questions).then(function(answer){
+            console.log(answer)
+
+            for(let key in answer){
+                for(let file in filter){
+                    if(key === filter[file] ){
+                        filter[file] = answer[key]
+                    }
+                }
+            }
+
+            gh(answer,filter,workDir,outputDir)
+
+        });
+    })
+}

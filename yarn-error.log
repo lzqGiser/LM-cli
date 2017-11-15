@@ -20,7 +20,7 @@ npm manifest:
     "description": "一款用来通过命令行配置脚手架的工具",
     "main": "index.js",
     "bin": {
-      "lm-init": "bin/lm-init.js"
+      "lm-init": "bin/lm.js"
     },
     "scripts": {
       "test": "node bin/index.js"

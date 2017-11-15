@@ -1,0 +1,1 @@
+/** * Created by lzq on 2017/11/6. */import inquirer from 'inquirer'/** @param {String} questions* */function interAsk(questions){  // prompts对象    return new Promise((resolve)=>{        inquirer.prompt(questions).then((answer)=>{            resolve(answer);        });    });}export default interAsk;

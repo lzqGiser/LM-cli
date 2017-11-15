@@ -1,1 +1,0 @@
-/** * Created by lzq on 2017/9/8. */const pub = require('./pub');const path = require('path');const baseDir = path.resolve(__dirname,'../../');const options = {    REGISTRY: "registry=https://registry.npmjs.org/",    env: 'beta'};pub(baseDir, options);
