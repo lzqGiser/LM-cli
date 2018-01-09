@@ -13,5 +13,3 @@ const tmp = path.join(userHome, 'Documents/.vue-templates11');
 console.log(tmp)
 
 console.log(matchFile('template/scripts/publish/latest.js', '*/scripts/*/*.js'))
-
-// console.log(require(templatePath+'/meta'))

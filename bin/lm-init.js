@@ -8,7 +8,7 @@ const gh = require('../lib/handler');
 const localPath = require('../lib/local-path');
 
 const templatePath = path.join(userHome,'Documents/lmTemplate');
-const lstempout = path.join(userHome,'Documents/build')   // 临时work目录，最终要替换成上面的内容
+const lstempout = path.join(userHome,'Documents/build')
 
 // const lstemp = path.join(__dirname,'../tmp/template')   // 临时work目录，最终要替换成上面的内容
 // const lstempp = path.join(__dirname,'../tmp/build')   // 临时work目录，最终要替换成上面的内容
@@ -43,7 +43,6 @@ function generate(workDir, outputDir){
                 }
             }
             gh(answer,filter,workDir,outputDir)
-
         });
     })
 }
