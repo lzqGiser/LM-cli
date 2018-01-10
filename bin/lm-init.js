@@ -6,6 +6,7 @@ const downGit = require('../lib/downloadGit');
 const userHome = require('user-home');
 const gh = require('../lib/handler');
 const localPath = require('../lib/local-path');
+const memoryFs = require('memory-fs');
 
 const templatePath = path.join(userHome,'Documents/lmTemplate');
 const lstempout = path.join(userHome,'Documents/build')
@@ -15,7 +16,7 @@ const lstempout = path.join(userHome,'Documents/build')
 
 // 测试输出命令行当前路径
 // console.log(process.argv);
-console.log(process.cwd()) // 读取当前进程所在的路径
+console.log(process.cwd()); // 读取当前进程所在的路径
 
 console.log(`命令行当前输出的路径为：${__dirname}`);
 
@@ -24,8 +25,8 @@ if(localPath.isLoaclPath(templatePath)){
 }
 
 /*
-* @param {String} work path
-* @param {}
+* @param {String} workDir  工作目录，用来存放临时文件
+* @param {String} outputDir 输出目录
 * */
 
 function generate(workDir, outputDir){
