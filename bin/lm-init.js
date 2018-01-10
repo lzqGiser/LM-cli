@@ -14,14 +14,21 @@ const lstempout = path.join(userHome,'Documents/build')
 // const lstempp = path.join(__dirname,'../tmp/build')   // 临时work目录，最终要替换成上面的内容
 
 // 测试输出命令行当前路径
+// console.log(process.argv);
+console.log(process.cwd()) // 读取当前进程所在的路径
+
 console.log(`命令行当前输出的路径为：${__dirname}`);
 
 if(localPath.isLoaclPath(templatePath)){
-    generate(templatePath,lstempout);
+    //generate(templatePath,lstempout);
 }
 
-function generate(workDir, outputDir){
+/*
+* @param {String} work path
+* @param {}
+* */
 
+function generate(workDir, outputDir){
     downGit('github:lzqGiser/vue-npm-con',workDir).then(function(msg){
         console.log(msg);
         let meta;
