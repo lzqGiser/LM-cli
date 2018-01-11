@@ -6,22 +6,15 @@ const downGit = require('../lib/downloadGit');
 const userHome = require('user-home');
 const gh = require('../lib/handler');
 const localPath = require('../lib/local-path');
-const memoryFs = require('memory-fs');
 
-const templatePath = path.join(userHome,'Documents/lmTemplate');
-const lstempout = path.join(userHome,'Documents/build')
+const templatePath = path.join(userHome,'.lmTemplate');
+const lstempout = path.join(process.cwd(), '/lmTemplate');
 
-// const lstemp = path.join(__dirname,'../tmp/template')   // 临时work目录，最终要替换成上面的内容
-// const lstempp = path.join(__dirname,'../tmp/build')   // 临时work目录，最终要替换成上面的内容
-
-// 测试输出命令行当前路径
-// console.log(process.argv);
-console.log(process.cwd()); // 读取当前进程所在的路径
-
-console.log(`命令行当前输出的路径为：${__dirname}`);
+console.log(`当前工作的路径为：${templatePath}`);
+console.log(`当前输出的路径为：${lstempout}`);
 
 if(localPath.isLoaclPath(templatePath)){
-    //generate(templatePath,lstempout);
+    generate(templatePath,lstempout);
 }
 
 /*
@@ -50,7 +43,10 @@ function generate(workDir, outputDir){
                     }
                 }
             }
-            gh(answer,filter,workDir,outputDir)
+            gh(answer,filter,workDir,outputDir).then(function(result){
+                console.log(`--------------------------------`);
+                console.log(`lm-cli build project ${result}`);
+            })
         });
     })
 }
