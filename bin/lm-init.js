@@ -7,6 +7,7 @@ const userHome = require('user-home');
 const gh = require('../lib/handler');
 const localPath = require('../lib/local-path');
 const codeQuestions = require('../config/questions');
+const fs = require('fs');
 
 const templatePath = path.join(userHome,'.lmTemplate');
 const lstempout = path.join(process.cwd(), '/lmTemplate');
@@ -30,9 +31,10 @@ if(localPath.isLoaclPath(templatePath)){
 function generate(workDir, outputDir){
 
     interAsk(codeQuestions).then(function(answer){
-        console.log(answer.code)
 
-        downGit('github:lzqGiser/vue-npm-con',workDir).then(function(msg){
+        console.log(`your address of downloading is ${answer.code}`);
+
+        downGit(answer.code, workDir).then(function(msg){    // github:lzqGiser/vue-npm-con
             console.log(msg);
             let meta;
             let metaPath = path.join(workDir,'./meta.js');
