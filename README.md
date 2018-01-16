@@ -15,4 +15,11 @@
 
 > 进入命令行模式，在需要建立工程的目录下执行命令：lm-init ； 根据命令行提示，依次配置内容；
 
+##### code地址
+> code地址的源，支持github仓库，可以选择https和ssh下载，在命令行中输入的格式要注意，
+
+> github的ssh方式clone，应该输入：github:{username}／{projectTemplate}
+
+  例如：作者的另一个项目vue-npm-con，此时输入的就是 github:lzqGiser/vue-npm-con
+
 
